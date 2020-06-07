@@ -37,5 +37,8 @@ public class JoJo{
            }
     
     }
+    public static String addPoint(String s) {
+          return s + ".";
     
+    }
 } 
