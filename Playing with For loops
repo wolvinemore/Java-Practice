@@ -10,7 +10,17 @@ public class MyClass {
     
     for (int i=0; i<2; i++){
         System.out.println("A");
+        }
+    }  
+    
+ // random number generator 1-10 for loop
+ 
+    for (int i=0; i<4; i=i+2){
+        
+        int randomInt = (int)(10.0 * Math.random());
+        
+        System.out.println(randomInt);
     }
       
-    }
+  
 }
