@@ -18,9 +18,10 @@ public class MyCharacter {
     int Wisdom=0;
     
     String [] Races={"crabfolk", "half-orc","human","halfling","elf","dragborn","dwarf","lizardfolk"};
+    String [] Class={"Paladin", "Barbarian", "Druid", "Fighter", "Wizard", "Rogue", "Ninja", "Warlock"};
     String Language="Common";
     String Race="";
     
-    System.out.println(Races[1]);
+    System.out.println("I am a " + Races[1] + " " + Class[2]);
 }
 }
