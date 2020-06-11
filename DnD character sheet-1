@@ -31,9 +31,10 @@ public class MyCharacter {
     int Acextra = myObj.nextInt();
     
     //AC calculator
-    int AC = ACbonus + Acextra
+    int AC = ACbonus + Acextra;
     
     System.out.println("I am a " + Races[1] + " " + Class[2]);
+    System.out.rintln("my AC is " + AC);
     
     }
 }
