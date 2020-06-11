@@ -8,7 +8,7 @@ public class MyCharacter {
     public static void main(String args[]) {
         
     int HP=0;
-    int AC=0 + 10;
+    int ACbonus=10;
     
     int Charisma=0;
     int Strength=0;
@@ -22,6 +22,18 @@ public class MyCharacter {
     String Language="Common";
     String Race="";
     
+    //Takes in User input
+    Scanner myObj = new Scanner(System.in);
+    
+    System.out.println("What is your AC bonuses from your  DEX, Class, natural armor, ect.?");
+    
+    //Gets input for AC extra based on DEX, Class, natural armor, ect.
+    int Acextra = myObj.nextInt();
+    
+    //AC calculator
+    int AC = ACbonus + Acextra
+    
     System.out.println("I am a " + Races[1] + " " + Class[2]);
-}
+    
+    }
 }
