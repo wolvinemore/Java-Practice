@@ -2,13 +2,14 @@
 
 //import 
 
-import java.util.*;
+import java.util.Scanner;
 
-public class MyCharacter {
-    public static void main(String args[]) {
+public class CharacterSheet {
+    
+   public static void main(String[] args) {
         
     int HP=0;
-    int ACbonus=10;
+    int ACbase=10;
     
     int Charisma=0;
     int Strength=0;
@@ -21,20 +22,121 @@ public class MyCharacter {
     String [] Class={"Paladin", "Barbarian", "Druid", "Fighter", "Wizard", "Rogue", "Ninja", "Warlock"};
     String Language="Common";
     String Race="";
+    String Role="";
     
     //Takes in User input
     Scanner myObj = new Scanner(System.in);
     
-    System.out.println("What is your AC bonuses from your  DEX, Class, natural armor, ect.?");
-    
     //Gets input for AC extra based on DEX, Class, natural armor, ect.
-    int Acextra = myObj.nextInt();
+    System.out.println("What is your AC bonus from your DEX?");
     
-    //AC calculator
-    int AC = ACbonus + Acextra;
+    int ACdex = myObj.nextInt();
     
-    System.out.println("I am a " + Races[1] + " " + Class[2]);
-    System.out.rintln("my AC is " + AC);
+    System.out.println("What is your AC bonus from your Class?");
     
+    int ACclass = myObj.nextInt();
+    
+    System.out.println("What is your AC bonus from your Armor?");
+    
+    int ACarmor = myObj.nextInt();
+  
+    System.out.println("What is your AC bonus from your Race?");
+    
+    int ACrace = myObj.nextInt();
+    
+    System.out.println("What is your AC bonus from your Natural Armor class if you have one?");
+
+    int ACnat = myObj.nextInt();
+    
+    
+    //Shows what classes you could pick
+    System.out.println("CHOOSE YOUR CLASS:");
+    System.out.println("[1] Paladin " + "[2] Barbarian " + "[3] Druid " + "[4] Fighter " + "[5] Wizard " + "[6] Rogue " + "[7] Ninja ");
+    
+    double rolesT = myObj.nextDouble();
+    
+    if (rolesT == 1){
+        Role = "Paladin";
     }
+        else if (rolesT == 2) {
+            Role = "Barbarian";    
+                }
+        
+        else if (rolesT == 3) {
+            Role = "Druid";    
+                }
+        
+        else if (rolesT == 4) {
+            Role = "Fighter";    
+                }
+        else if (rolesT == 5) {
+            Role = "Wizard";    
+                }
+        
+        else if (rolesT == 6) {
+            Role = "Rogue";    
+                }
+        
+        else if (rolesT == 7) {
+            Role = "Ninja";    
+                }
+        else{
+            System.out.println("Try again");
+            //ask again and loopback
+        }
+    
+    //Shows what race you could pick
+    System.out.println("CHOOSE YOUR RACE:");
+    System.out.println("[1] crabfolk " + "[2] half-orc " + "[3] human " + "[4] halfling " + "[5] elf " + "[6] dragborn " + "[7] dwarf " + "[8] lizardfolk ");
+    
+    double raceT = myObj.nextDouble();
+    
+    if (raceT == 1){
+        Race = "crabfolk";
+    }
+        else if (rolesT == 2) {
+            Race = "half-orc";    
+                }
+        
+        else if (rolesT == 3) {
+            Race = "human";    
+                }
+        
+        else if (rolesT == 4) {
+            Race = "halfling";    
+                }
+        else if (rolesT == 5) {
+            Race = "elf";    
+                }
+        
+        else if (rolesT == 6) {
+            Race = "Dragonborn";    
+                }
+        
+        else if (rolesT == 7) {
+            Race = "dwarf";    
+                }
+        
+        else if (rolesT == 8){
+            Race = "lizardfolf";
+                }
+        
+        else{
+            System.out.println("Try again");
+            //ask again and loopback
+        }
+    
+    
+  //Math
+    
+    //AC calculator 
+    int AC = ACbase + ACdex + ACarmor + ACclass + ACrace + ACnat;
+ 
+    //Final product
+    System.out.println("I am a " + Race);
+    System.out.println("my AC is " + AC);
+    System.out.println("my role is " + Role);
+   }
 }
+//Read, Execute, Loop - Java script repel library
+//DOM
