@@ -133,7 +133,7 @@ public class CharacterSheet {
     int AC = ACbase + ACdex + ACarmor + ACclass + ACrace + ACnat;
  
     //Final product
-    System.out.println("I am a " + Race);
+    System.out.println("\n" + "I am a " + Race);
     System.out.println("my AC is " + AC);
     System.out.println("my role is " + Role);
    }
