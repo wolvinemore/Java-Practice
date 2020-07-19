@@ -3,13 +3,21 @@
 //import 
 
 import java.util.Scanner;
+import java.util.*;
 
 public class CharacterSheet {
+    
+   // Random number Generator 
+   public int randomAbilityScore(int min, int max) {
+    Random random = new Random();
+    return random.nextInt(max - min) + min;
+}
     
    public static void main(String[] args) {
         
     int HP=0;
     int ACbase=10;
+    int XP=0;
     
     int Charisma=0;
     int Strength=0;
@@ -18,11 +26,13 @@ public class CharacterSheet {
     int Intelligence=0;
     int Wisdom=0;
     
+    
     String [] Races={"crabfolk", "half-orc","human","halfling","elf","dragborn","dwarf","lizardfolk"};
     String [] Class={"Paladin", "Barbarian", "Druid", "Fighter", "Wizard", "Rogue", "Ninja", "Warlock"};
     String Language="Common";
+    String Asystem="";
     String Race="";
-    String Role="";
+    String Role="";   
     
     //Takes in User input
     Scanner myObj = new Scanner(System.in);
@@ -48,6 +58,9 @@ public class CharacterSheet {
 
     int ACnat = myObj.nextInt();
     
+    System.out.println("What is your AC bonus from your gear or shield?");
+
+    int ACshield = myObj.nextInt();
     
     //Shows what classes you could pick
     System.out.println("CHOOSE YOUR CLASS:");
@@ -89,35 +102,35 @@ public class CharacterSheet {
     System.out.println("CHOOSE YOUR RACE:");
     System.out.println("[1] crabfolk " + "[2] half-orc " + "[3] human " + "[4] halfling " + "[5] elf " + "[6] dragborn " + "[7] dwarf " + "[8] lizardfolk ");
     
-    double raceT = myObj.nextDouble();
+    double raceR = myObj.nextDouble();
     
-    if (raceT == 1){
+    if (raceR == 1){
         Race = "crabfolk";
     }
-        else if (rolesT == 2) {
+        else if (raceR == 2) {
             Race = "half-orc";    
                 }
         
-        else if (rolesT == 3) {
+        else if (raceR == 3) {
             Race = "human";    
                 }
         
-        else if (rolesT == 4) {
+        else if (raceR == 4) {
             Race = "halfling";    
                 }
-        else if (rolesT == 5) {
+        else if (raceR == 5) {
             Race = "elf";    
                 }
         
-        else if (rolesT == 6) {
+        else if (raceR == 6) {
             Race = "Dragonborn";    
                 }
         
-        else if (rolesT == 7) {
+        else if (raceR == 7) {
             Race = "dwarf";    
                 }
         
-        else if (rolesT == 8){
+        else if (raceR == 8){
             Race = "lizardfolf";
                 }
         
@@ -126,17 +139,72 @@ public class CharacterSheet {
             //ask again and loopback
         }
     
+    System.out.println("How do you want to determine your ability score?");
+    System.out.println("(1) Point Buy" + "\n" + "(2) Table Method" + "\n" + "(3) Randomly");
     
+    double AbilityS = myObj.nextDouble();
+    
+      if (AbilityS == 1){
+        Asystem = "Point Buy";
+    }
+        else if (AbilityS == 2) {
+            Asystem = "Table Method";    
+                }
+        
+        else if (AbilityS == 3) {
+            Asystem = "Randomly";    
+                }
+        else{
+            System.out.println("Try again");
+            //ask again and loopback
+        }
   //Math
+  
+    /**Calculater for something
+    var x=1;
+    
+    for(var i=0; i<3; i++){
+        x += 5 * i;
+        
+       return;
+    }**/
+    
+    
+    //POINT BUY SYSTEM
+    
+    if (Asystem == "Point Buy"){
+        int x=0;
+    }
+    
+    else if (Asystem == "Table Method"){
+       int y=0;
+    
+    }
+    
+    else if (Asystem == "Randomly"){
+    
+    Random rand = new Random();    
+         
+    Charisma = rand.nextInt(20);
+    Strength = randomAbilityScore(4,24);
+    Dexterity=0;
+    Constitution=0;
+    Intelligence=0;
+    Wisdom=0;
+    
+    }
     
     //AC calculator 
-    int AC = ACbase + ACdex + ACarmor + ACclass + ACrace + ACnat;
+    int AC = ACbase + ACdex + ACarmor + ACclass + ACrace + ACnat + ACshield;
  
     //Final product
     System.out.println("\n" + "I am a " + Race);
     System.out.println("my AC is " + AC);
     System.out.println("my role is " + Role);
+    System.out.println("\n" + "These are my ability stats" + "\n" + "CHA: " + Charisma + "\n" + "DEX: " + Dexterity + "\n" + "STR: " + Strength + "\n" + "CON: " + Constitution + "\n" + "INT: " + Intelligence + "\n" + "WIS: " + Wisdom);
    }
+ 
 }
 //Read, Execute, Loop - Java script repel library
 //DOM
+//Implement GUI
