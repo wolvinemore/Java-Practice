@@ -1,0 +1,24 @@
+import java.util.Scanner;
+import java.util.*;
+
+Public static void main(String[] args ){
+  
+  /** Hashmap Notes
+    1. Hash maps don't have an order
+    2. hashMapName.put(Key, Value);
+    3. <String, String> & <String, Int>     <----- types of kesys / values
+    4. .replace
+    5. .keyset
+    6. .remove
+    7. system.out.println(hashMapName.containsValue("something"));   <----- prints what ever that value is
+    **/
+
+
+    Dictionary character = new Hashtable();
+    character.put("name");
+    
+    Dictionary status = new Hashtable();
+    status.put("HP", 20);
+    status.put("MP", 200);
+    
+}
