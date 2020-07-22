@@ -42,27 +42,27 @@ public class CharacterSheet {
     Scanner myObj = new Scanner(System.in);
     
     //Gets input for AC extra based on DEX, Class, natural armor, ect.
-    System.out.println("What is your AC bonus from your DEX?");
+        System.out.println("What is your AC bonus from your DEX?");
     
     int ACdex = myObj.nextInt();
     
-    System.out.println("What is your AC bonus from your Class?");
+        System.out.println("What is your AC bonus from your Class?");
     
     int ACclass = myObj.nextInt();
     
-    System.out.println("What is your AC bonus from your Armor?");
+        System.out.println("What is your AC bonus from your Armor?");
     
     int ACarmor = myObj.nextInt();
   
-    System.out.println("What is your AC bonus from your Race?");
+        System.out.println("What is your AC bonus from your Race?");
     
     int ACrace = myObj.nextInt();
     
-    System.out.println("What is your AC bonus from your Natural Armor class if you have one?");
+        System.out.println("What is your AC bonus from your Natural Armor class if you have one?");
 
     int ACnat = myObj.nextInt();
     
-    System.out.println("What is your AC bonus from your gear or shield?");
+        System.out.println("What is your AC bonus from your gear or shield?");
 
     int ACshield = myObj.nextInt();
     
@@ -86,6 +86,7 @@ public class CharacterSheet {
         else if (rolesT == 4) {
             Role = "Fighter";    
                 }
+        
         else if (rolesT == 5) {
             Role = "Wizard";    
                 }
@@ -122,6 +123,7 @@ public class CharacterSheet {
         else if (raceR == 4) {
             Race = "halfling";    
                 }
+        
         else if (raceR == 5) {
             Race = "elf";    
                 }
@@ -190,7 +192,7 @@ public class CharacterSheet {
     Random rand = new Random();    
          
     Charisma = rand.nextInt(20);
-    //Strength = randomAbilityScore(4,24);
+   // Strength == randomAbilityScore(4,24);
     Dexterity=0;
     Constitution=0;
     Intelligence=0;
