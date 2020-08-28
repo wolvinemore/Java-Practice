@@ -3,6 +3,7 @@
 //import 
 
 import java.util.Scanner;
+import java.util.HashMap;
 import java.util.*;
 
 public class CharacterSheet {
@@ -14,8 +15,8 @@ public class CharacterSheet {
 }
     
    public static void main(String[] args) {
-        
-    int HP=0;
+    
+    int HP=0;   
     int ACbase=10;
     int XP=0;
     
@@ -26,6 +27,13 @@ public class CharacterSheet {
     int Intelligence=0;
     int Wisdom=0;
     
+    
+    Dictionary status = new Hashtable();
+    status.put("hp", 20);
+    status.put("MP", 200);
+    
+    HashMap<String, Integer> other = new HashMap <String, Integer>();
+    other.put("alive", 20);
     
     String [] Races={"crabfolk", "half-orc","human","halfling","elf","dragborn","dwarf","lizardfolk"};
     String [] Class={"Paladin", "Barbarian", "Druid", "Fighter", "Wizard", "Rogue", "Ninja", "Warlock"};
@@ -38,27 +46,27 @@ public class CharacterSheet {
     Scanner myObj = new Scanner(System.in);
     
     //Gets input for AC extra based on DEX, Class, natural armor, ect.
-    System.out.println("What is your AC bonus from your DEX?");
+        System.out.println("What is your AC bonus from your DEX?");
     
     int ACdex = myObj.nextInt();
     
-    System.out.println("What is your AC bonus from your Class?");
+        System.out.println("What is your AC bonus from your Class?");
     
     int ACclass = myObj.nextInt();
     
-    System.out.println("What is your AC bonus from your Armor?");
+        System.out.println("What is your AC bonus from your Armor?");
     
     int ACarmor = myObj.nextInt();
   
-    System.out.println("What is your AC bonus from your Race?");
+        System.out.println("What is your AC bonus from your Race?");
     
     int ACrace = myObj.nextInt();
     
-    System.out.println("What is your AC bonus from your Natural Armor class if you have one?");
+        System.out.println("What is your AC bonus from your Natural Armor class if you have one?");
 
     int ACnat = myObj.nextInt();
     
-    System.out.println("What is your AC bonus from your gear or shield?");
+        System.out.println("What is your AC bonus from your gear or shield?");
 
     int ACshield = myObj.nextInt();
     
@@ -82,6 +90,7 @@ public class CharacterSheet {
         else if (rolesT == 4) {
             Role = "Fighter";    
                 }
+        
         else if (rolesT == 5) {
             Role = "Wizard";    
                 }
@@ -118,6 +127,7 @@ public class CharacterSheet {
         else if (raceR == 4) {
             Race = "halfling";    
                 }
+        
         else if (raceR == 5) {
             Race = "elf";    
                 }
@@ -183,14 +193,20 @@ public class CharacterSheet {
     
     else if (Asystem == "Randomly"){
     
+    int min = 8;
+    int max = 20;
+        
     Random rand = new Random();    
-         
+    int random_int = (int)(Math.random()*(max - min + 1) + min);
+    int random_int2 = (int)(Math.random()*(max - min + 1) + min);  
+    int random_int3 = (int)(Math.random()*(max - min + 1) + min);
+    
     Charisma = rand.nextInt(20);
-    Strength = randomAbilityScore(4,24);
-    Dexterity=0;
-    Constitution=0;
-    Intelligence=0;
-    Wisdom=0;
+    Strength = random_int3;
+    Dexterity = random_int;
+    Constitution = random_int2;
+    Intelligence = random_int2;
+    Wisdom = random_int3;
     
     }
     
@@ -202,6 +218,8 @@ public class CharacterSheet {
     System.out.println("my AC is " + AC);
     System.out.println("my role is " + Role);
     System.out.println("\n" + "These are my ability stats" + "\n" + "CHA: " + Charisma + "\n" + "DEX: " + Dexterity + "\n" + "STR: " + Strength + "\n" + "CON: " + Constitution + "\n" + "INT: " + Intelligence + "\n" + "WIS: " + Wisdom);
+    System.out.println(other.containsKey("alive"));
+    System.out.println(other.containsValue(20));
    }
  
 }
