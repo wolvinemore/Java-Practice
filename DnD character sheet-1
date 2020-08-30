@@ -8,7 +8,7 @@ import java.util.*;
 
 public class CharacterSheet {
     
-   // Random number Generator 
+  // Random number Generator 
    public int randomAbilityScore(int min, int max) {
     Random random = new Random();
     return random.nextInt(max - min) + min;
@@ -26,7 +26,13 @@ public class CharacterSheet {
     int Constitution=0;
     int Intelligence=0;
     int Wisdom=0;
-    
+            
+    int ChaBonus=0;
+    int StrBonus=0;
+    int DexBonus=0;
+    int ConBonus=0;
+    int IntBonus=0;
+    int WisBonus=0;
     
     Dictionary status = new Hashtable();
     status.put("hp", 20);
@@ -42,7 +48,7 @@ public class CharacterSheet {
     String Race="";
     String Role="";   
     
-    //Takes in User input
+   //Takes in User input
     Scanner myObj = new Scanner(System.in);
     
     //Gets input for AC extra based on DEX, Class, natural armor, ect.
@@ -70,7 +76,7 @@ public class CharacterSheet {
 
     int ACshield = myObj.nextInt();
     
-    //Shows what classes you could pick
+   //Shows what classes you could pick
     System.out.println("CHOOSE YOUR CLASS:");
     System.out.println("[1] Paladin " + "[2] Barbarian " + "[3] Druid " + "[4] Fighter " + "[5] Wizard " + "[6] Rogue " + "[7] Ninja ");
     
@@ -107,7 +113,7 @@ public class CharacterSheet {
             //ask again and loopback
         }
     
-    //Shows what race you could pick
+   //Shows what race you could pick
     System.out.println("CHOOSE YOUR RACE:");
     System.out.println("[1] crabfolk " + "[2] half-orc " + "[3] human " + "[4] halfling " + "[5] elf " + "[6] dragborn " + "[7] dwarf " + "[8] lizardfolk ");
     
@@ -148,7 +154,7 @@ public class CharacterSheet {
             System.out.println("Try again");
             //ask again and loopback
         }
-    
+   //Players determine ability score 
     System.out.println("How do you want to determine your ability score?");
     System.out.println("(1) Point Buy" + "\n" + "(2) Table Method" + "\n" + "(3) Randomly");
     
@@ -156,10 +162,12 @@ public class CharacterSheet {
     
       if (AbilityS == 1){
         Asystem = "Point Buy";
+        
     }
         else if (AbilityS == 2) {
             Asystem = "Table Method";    
-                }
+                
+            }
         
         else if (AbilityS == 3) {
             Asystem = "Randomly";    
@@ -168,17 +176,6 @@ public class CharacterSheet {
             System.out.println("Try again");
             //ask again and loopback
         }
-  //Math
-  
-    /**Calculater for something
-    var x=1;
-    
-    for(var i=0; i<3; i++){
-        x += 5 * i;
-        
-       return;
-    }**/
-    
     
     //POINT BUY SYSTEM
     
@@ -187,8 +184,7 @@ public class CharacterSheet {
     }
     
     else if (Asystem == "Table Method"){
-       int y=0;
-    
+       int points = 25;
     }
     
     else if (Asystem == "Randomly"){
@@ -210,7 +206,13 @@ public class CharacterSheet {
     
     }
     
+    //HP calculator 
+    if (Race == "crabfolk"){
+        HP = 30;
+    }
+    
     //AC calculator 
+    
     int AC = ACbase + ACdex + ACarmor + ACclass + ACrace + ACnat + ACshield;
  
     //Final product
