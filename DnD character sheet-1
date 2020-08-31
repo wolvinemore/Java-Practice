@@ -180,8 +180,34 @@ public class CharacterSheet {
     //POINT BUY SYSTEM
     
     if (Asystem == "Point Buy"){
-        int x=0;
+        
+        Charisma = 10;
+        Strength = 10;
+        Dexterity = 10;
+        Constitution = 10;
+        Intelligence = 10;
+        Wisdom = 10;
+        
+        System.out.println("how many points?" + "20,25,28 or 30");
+        
+        double points = myObj.nextDouble();
+        
+        if (points == 25){
+            
+        }
+            else if (points == 20){
+                
+            }
+        
+            else if (points == 30){
+                
+            }
+        
+            else if (points == 28){
+                
+            }
     }
+    
     
     else if (Asystem == "Table Method"){
        int points = 25;
